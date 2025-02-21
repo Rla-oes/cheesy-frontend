@@ -25,16 +25,33 @@ body {
 .header {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* 중앙 정렬 */
+  align-items: center;
   padding: 10px 20px;
+  position: relative;
 }
 
-.header button {
+.icon-button {
   background: none;
   border: none;
-  width: 30px;
-  height: 30px;
+  width: 50px; /* 버튼 크기 줄임 */
+  height: 40px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button img {
+  width: 100%; /* 버튼 크기에 맞게 조정 */
+  height: 100%;
+  object-fit: contain; /* 이미지가 버튼 크기에 맞게 조정됨 */
+}
+
+.header span {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 0 90px; /* 버튼과 간격 조절 */
 }
 
 .button-container {
@@ -61,31 +78,5 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
-}
-
-.menu-container, .saved-menus {
-  width: 80%;
-  margin-top: 20px;
-  text-align: center;
-}
-
-.menu-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 10px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.menu-item button {
-  background: #D4A017;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
   cursor: pointer;
 }
