@@ -73,7 +73,7 @@ body {
 
 .button {
   width: 100%; /* ✅ 버튼이 컨테이너 내에서 균등한 크기로 배치 */
-  height: 100px; /* ✅ 버튼 크기를 조금 더 키워 여백과 조화롭게 정렬 */
+  height: 90px; /* ✅ 버튼 크기를 조금 더 키워 여백과 조화롭게 정렬 */
   background-color: #ffffff;
   border: none;
   border-radius: 20px; /* ✅ 둥근 버튼 모양 유지 */

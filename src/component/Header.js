@@ -1,14 +1,21 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // ✅ 추가
 import "./Header.css";
 
 function Header({ title }) {
+  const navigate = useNavigate(); // ✅ 네비게이션 기능 사용
+
   return (
     <div className="header">
-      <button className="icon-button">
+      {/* 뒤로 가기 버튼 */}
+      <button className="icon-button" onClick={() => navigate(-1)}> 
         <img src="/images/back-button.png" alt="뒤로 가기" />
       </button>
+
       <span className="header-title">{title}</span>
-      <button className="icon-button">
+
+      {/* 홈으로 가기 버튼 */}
+      <button className="icon-button" onClick={() => navigate("/")}> 
         <img src="/images/home-button.png" alt="홈으로 가기" />
       </button>
     </div>
