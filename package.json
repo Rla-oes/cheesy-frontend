@@ -1,16 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "untitled1",
-  "version": "1.0.0",
-  "description": "",
-  "main": "mymenu page/script.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "private": true,
-  "dependencies": {
-    "react-router-dom": "^7.2.0"
-=======
   "name": "hello-react",
   "version": "0.1.0",
   "private": true,
@@ -46,6 +34,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
->>>>>>> 77048fddce9732e727209294268db8256c171cd2
   }
 }
