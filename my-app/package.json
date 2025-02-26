@@ -7,17 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "start": "react-scripts start",  // 원래 레포의 스크립트 추가
-    "test": "react-scripts test",    // 원래 레포의 스크립트 추가
-    "eject": "react-scripts eject"   // 원래 레포의 스크립트 추가
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "axios": "^1.7.9",                // 원래 레포에서 추가된 의존성
-    "react-router-dom": "^7.2.0",     // 원래 레포에서 추가된 의존성
-    "react-scripts": "5.0.1"          // 원래 레포에서 추가된 의존성
+    "react-dom": "^19.0.0"
+
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
