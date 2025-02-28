@@ -7,6 +7,7 @@ import { ReactComponent as IconamoonHome } from "../Roulette/img/iconamoon_home.
 import { ReactComponent as MaterialSymbolsArrowBackRounded } from "../Roulette/img/material-symbols_arrow-back-rounded.svg";
 
 import {Link, useLocation, useNavigate} from "react-router-dom";
+import Header from "../../component/Header";
 
 export const Mymenu = () => {
     const [menuItems, setMenuItems] = useState(["불고기", "김치찌개", "제육볶음"]);
@@ -44,6 +45,7 @@ export const Mymenu = () => {
     return (
         <div className="screen">
             <div className="div">
+                {/*<Header title="" />*/}
                 <div className="profile-container">
                     <img className="profile" alt="Profile" src={profile} />
                 </div>
@@ -68,9 +70,6 @@ export const Mymenu = () => {
                     </div>
                 </div>
             </div>
-            <IconamoonHome className="iconamoon-home" onClick={() => navigate("/home")} />
-            <MaterialSymbolsArrowBackRounded className="material-symbols" onClick={() => navigate(-1)} />
-
 
             {/* 🛑 커스텀 삭제 모달 */}
             {isModalOpen && (
