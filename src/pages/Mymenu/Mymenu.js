@@ -3,8 +3,10 @@ import pen from "./pen.svg";
 import profile from "./profile.svg";
 import trash from "./trash.svg";
 import "./Mymenu.css";
+import { ReactComponent as IconamoonHome } from "../Roulette/img/iconamoon_home.svg";
+import { ReactComponent as MaterialSymbolsArrowBackRounded } from "../Roulette/img/material-symbols_arrow-back-rounded.svg";
 
-import {Link} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 
 export const Mymenu = () => {
     const [menuItems, setMenuItems] = useState(["불고기", "김치찌개", "제육볶음"]);
@@ -15,6 +17,10 @@ export const Mymenu = () => {
         setDeleteIndex(index);
         setIsModalOpen(true);
     };
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const category = location.state?.category;
 
     // 삭제 확인 시 실행
     const handleConfirmDelete = () => {
@@ -37,6 +43,8 @@ export const Mymenu = () => {
 
     return (
         <div className="screen">
+            <IconamoonHome className="iconamoon-home" onClick={() => navigate("/home")} />
+            <MaterialSymbolsArrowBackRounded className="material-symbols" onClick={() => navigate(-1)} />
             <div className="menu-container">
                 <div className="profile-container">
                     <img className="profile" alt="Profile" src={profile} />

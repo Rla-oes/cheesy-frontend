@@ -6,7 +6,7 @@ import Mymenu from "./pages/Mymenu/Mymenu";  // Mymenu 페이지 import
 
 import Home from "./pages/Home";
 
-import Roulette from "./pages/Roulette/roulette";
+import Roulette from "./pages/Roulette/Roulette";
 
 function App() {
     return (

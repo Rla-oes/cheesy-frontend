@@ -6,7 +6,7 @@ import { ReactComponent as IconamoonHome } from "../Roulette/img/iconamoon_home.
 import { ReactComponent as MaterialSymbolsArrowBackRounded } from "../Roulette/img/material-symbols_arrow-back-rounded.svg";
 import frame5 from "../Roulette/img/Frame 5.png";
 import polygon2 from "../Roulette/img/Polygon 2.svg";
-import "../Roulette/Roulette.css";
+import "./Roulette.css";
 
 const Roulette = () => {
     const navigate = useNavigate();
@@ -30,7 +30,7 @@ const Roulette = () => {
         setSpinning(true);
         setTimeout(() => {
             setSpinning(false);
-            navigate("/result", state:{{category}});
+            navigate("/result", { state: { category } });
         }, 1000);
     };
 

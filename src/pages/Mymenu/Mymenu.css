@@ -183,3 +183,22 @@
 .modal-btn.cancel:hover{
     background: #ddd;
 }
+
+
+.screen .iconamoon-home {
+    height: 30px;
+    left: 342px;
+    position: absolute;
+    top: 59px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.screen .material-symbols {
+    height: 35px;
+    left: 20px;
+    position: absolute;
+    top: 59px;
+    width: 35px;
+    cursor: pointer;
+}
