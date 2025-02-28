@@ -3,9 +3,6 @@ import pen from "./pen.svg";
 import profile from "./profile.svg";
 import trash from "./trash.svg";
 import "./Mymenu.css";
-import { ReactComponent as IconamoonHome } from "../Roulette/img/iconamoon_home.svg";
-import { ReactComponent as MaterialSymbolsArrowBackRounded } from "../Roulette/img/material-symbols_arrow-back-rounded.svg";
-
 import {Link, useLocation, useNavigate} from "react-router-dom";
 import Header from "../../component/Header";
 

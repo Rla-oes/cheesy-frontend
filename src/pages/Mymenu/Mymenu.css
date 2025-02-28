@@ -141,19 +141,19 @@
 
 /* 📌 모달 창 */
 .modal {
-    background: white;
-    width: 400px;
-    padding: 20px;
-    border-radius: 15px;
+    background: #e8e6e6;
+    width: 150px;
+    padding: 2px;
+    border-radius: 10px;
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* 📝 모달 텍스트 */
 .modal-text {
-    font-size: 20px;
+    font-size: 10px;
     color: #323a46;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 /* 🟨 모달 버튼 컨테이너 (버튼을 나란히 배치) */
@@ -166,7 +166,7 @@
 .modal-btn {
     flex: 1;
     padding: 12px 0;
-    font-size: 18px;
+    font-size: 10px;
     font-weight: bold;
     border: none;
 
