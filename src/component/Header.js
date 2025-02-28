@@ -9,14 +9,14 @@ function Header({ title }) {
     <div className="header">
       {/* 뒤로 가기 버튼 */}
       <button className="icon-button" onClick={() => navigate(-1)}> 
-        <img src="/images/back-button.png" alt="뒤로 가기" />
+        <img src="/images/material-symbols_arrow-back-rounded.svg" alt="뒤로 가기" />
       </button>
 
       <span className="header-title">{title}</span>
 
       {/* 홈으로 가기 버튼 */}
       <button className="icon-button" onClick={() => navigate("/")}> 
-        <img src="/images/home-button.png" alt="홈으로 가기" />
+        <img src="/images/iconamoon_home.svg" alt="홈으로 가기" />
       </button>
     </div>
   );

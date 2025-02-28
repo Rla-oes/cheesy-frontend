@@ -4,21 +4,36 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    margin-left: -20px;
+    margin-right: -20px;
 }
   
-.header-title {
-    font-size: 20px;
-    font-weight: bold;
+/*.header-title {*/
+/*    font-size: 15px;*/
+/*    font-weight: bold;*/
+/*}*/
+
+.header span {
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0 90px; /* 버튼과 간격 조절 */
 }
-  
+
 .icon-button {
     background: none;
     border: none;
+    width: 40px; /* 버튼 크기 줄임 */
+    height: 40px;
     cursor: pointer;
-    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-  
+
 .icon-button img {
-    width: 25px;
-    height: 25px;
-}  
+    width: 100%; /* 버튼 크기에 맞게 조정 */
+    height: 100%;
+    object-fit: contain; /* 이미지가 버튼 크기에 맞게 조정됨 */
+}
+
+
