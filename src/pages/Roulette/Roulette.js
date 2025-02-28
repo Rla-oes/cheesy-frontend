@@ -7,6 +7,7 @@ import { ReactComponent as MaterialSymbolsArrowBackRounded } from "../Roulette/i
 import frame5 from "../Roulette/img/Frame 5.png";
 import polygon2 from "../Roulette/img/Polygon 2.svg";
 import "./Roulette.css";
+import Header from "../../component/Header";
 
 const Roulette = () => {
     const navigate = useNavigate();
@@ -36,6 +37,7 @@ const Roulette = () => {
 
     return (
         <div className="screen">
+            <Header title="" />
             <div className="div">
                 <div className="frame" onClick={startRoulette}>
                     <div className="overlap-group">
@@ -55,8 +57,6 @@ const Roulette = () => {
                     <img className="polygon" alt="Polygon" src={polygon2} />
                 </div>
 
-                <IconamoonHome className="iconamoon-home" onClick={() => navigate("/home")} />
-                <MaterialSymbolsArrowBackRounded className="material-symbols" onClick={() => navigate(-1)} />
             </div>
         </div>
     );

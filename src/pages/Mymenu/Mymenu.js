@@ -44,8 +44,8 @@ export const Mymenu = () => {
 
     return (
         <div className="screen">
+            <Header title="" />
             <div className="div">
-                {/*<Header title="" />*/}
                 <div className="profile-container">
                     <img className="profile" alt="Profile" src={profile} />
                 </div>
