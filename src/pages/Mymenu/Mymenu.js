@@ -43,21 +43,19 @@ export const Mymenu = () => {
 
     return (
         <div className="screen">
-            <IconamoonHome className="iconamoon-home" onClick={() => navigate("/home")} />
-            <MaterialSymbolsArrowBackRounded className="material-symbols" onClick={() => navigate(-1)} />
-            <div className="menu-container">
+            <div className="div">
                 <div className="profile-container">
                     <img className="profile" alt="Profile" src={profile} />
                 </div>
 
                 <div className="menu-title">My Menu</div>
 
-                <div className="overlap-group">
-                    <div className="frame">
-                        <div className="rectangle">
+                <div className="Overlap-group">
+                    <div className="Frame">
+                        <div className="Rectangle">
                             <div className="menu-list">
                                 {menuItems.map((item, index) => (
-                                    <div className="menu-item" key={index}>
+                                    <div className="menu-Item" key={index}>
                                         <div className="menu-text">{item}</div>
                                         <button className="trash-btn" onClick={() => handleDeleteClick(index)}>
                                             <img className="trash" alt="Trash" src={trash} />
@@ -70,6 +68,9 @@ export const Mymenu = () => {
                     </div>
                 </div>
             </div>
+            <IconamoonHome className="iconamoon-home" onClick={() => navigate("/home")} />
+            <MaterialSymbolsArrowBackRounded className="material-symbols" onClick={() => navigate(-1)} />
+
 
             {/* 🛑 커스텀 삭제 모달 */}
             {isModalOpen && (

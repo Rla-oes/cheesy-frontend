@@ -1,4 +1,4 @@
-.screen {
+.Screen {
     background-color: #ffffff;
     display: flex;
     justify-content: center;
@@ -23,12 +23,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 130px;
 }
 
 .profile {
-    height: 250px;
-    width: 250px;
+    height: 140px;
+    width: 140px;
 }
 
 .pen {
@@ -43,33 +43,34 @@
 .menu-title {
     display: flex;
     justify-content: center;
-    font-size: 40px;
+    font-size: 18px;
     color: #333B46;
+    opacity: 0.8;
     font-family: "Inter", Helvetica, sans-serif;
-    font-weight: 50;
+    font-weight: 400;
 
-    margin-top: 15px;
-    margin-bottom: 80px;
+    margin-top: 6px;
+    margin-bottom: 35px;
 }
 
-.overlap-group {
+.Overlap-group {
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
     width: 100%;
     height: 100%;
 }
 
-.frame {
-    width: 750px;
-    height: 750px;
+.Frame {
+    width: 300px;
+    height: 450px;
 }
 
-.rectangle {
+.Rectangle {
     background-color: #fbd46d1a;
-    border: 2px solid #fbd46d;
-    border-radius: 35px;
-    padding: 30px;
+    border: 1.7px solid #fbd46d;
+    border-radius: 30px;
+    padding: 15px;
     width: 100%;  /* 부모 요소의 width를 상속 */
     height: 100%; /* 부모 요소의 height를 상속 */
     box-sizing: border-box; /* padding이 height와 width에 포함되도록 설정 */
@@ -78,36 +79,36 @@
 .menu-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     width: 100%;
 }
 
 
-.menu-item {
+.menu-Item {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #fbd46d4c;
-    border-radius: 25px;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-    width: 640px; /* 너비를 부모 요소 기준 100%로 설정 */
-    height: 60px; /* 높이를 증가 */
+    border-radius: 15px;
+    padding: 2px 13px;
+    margin-bottom: 2px;
+    width: 243px;
+    height: 40px;
 
 }
 
 .menu-text {
-    font-size: 25px;
+    font-size: 13px;
     font-family: "Inter", Helvetica, sans-serif;
     font-weight: bold;
     color: #333B46;
-    opacity: 0.8;
+    opacity: 0.6;
 
 }
 
 .trash {
-    width: 30px;
-    height: 30px;
+    width: 16px;
+    height: 16px;
 }
 
 .trash-btn {
@@ -187,7 +188,7 @@
 
 .screen .iconamoon-home {
     height: 30px;
-    left: 342px;
+    left: 338px;
     position: absolute;
     top: 59px;
     width: 30px;
