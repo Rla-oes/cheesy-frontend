@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { ReactComponent as IconamoonHome } from "../roulette/img/iconamoon_home.svg";
-import { ReactComponent as MaterialSymbolsArrowBackRounded } from "../roulette/img/material-symbols_arrow-back-rounded.svg";
-import frame5 from "../roulette/img/Frame 5.png";
-import polygon2 from "../roulette/img/Polygon 2.svg";
-import "../roulette/roulette.css";
+import { ReactComponent as IconamoonHome } from "../Roulette/img/iconamoon_home.svg";
+import { ReactComponent as MaterialSymbolsArrowBackRounded } from "../Roulette/img/material-symbols_arrow-back-rounded.svg";
+import frame5 from "../Roulette/img/Frame 5.png";
+import polygon2 from "../Roulette/img/Polygon 2.svg";
+import "../Roulette/Roulette.css";
 
 const Roulette = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    const category = location.state?.category;
     const [spinning, setSpinning] = useState(false);
     const [anonymousId, setAnonymousId] = useState(localStorage.getItem("anonymous_id"));
 
@@ -28,8 +30,8 @@ const Roulette = () => {
         setSpinning(true);
         setTimeout(() => {
             setSpinning(false);
-            navigate("/result");
-        }, 3000);
+            navigate("/result", state:{{category}});
+        }, 1000);
     };
 
     return (
