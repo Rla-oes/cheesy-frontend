@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Header from "../component/Header";
+import Header from "../../component/Header";
 import "./category.css";
 
 function Category() {
