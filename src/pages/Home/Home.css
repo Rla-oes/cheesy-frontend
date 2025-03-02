@@ -39,3 +39,19 @@
     background-color: #4f8a8b;
     color: white;
 }
+
+.category-go-button:hover {
+    background-color: #e3b455; /* hover 상태에서 조금 더 어두운 색 */
+}
+
+.category-go-button:active {
+    background-color: #d2a249; /* 눌렸을 때 더 어두운 색 */
+}
+
+.mymenu-go-button:hover {
+    background-color: #406d6d; /* hover 상태에서 조금 더 어두운 색 */
+}
+
+.mymenu-go-button:active {
+    background-color: #365f5f; /* 눌렸을 때 더 어두운 색 */
+}
