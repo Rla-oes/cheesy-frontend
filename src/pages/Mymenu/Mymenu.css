@@ -5,7 +5,7 @@
     align-items: center;
     width: 100%;
     height: 100vh; /* 화면 크기에 맞게 */
-    /*flex-direction: column; !* 세로 정렬을 위해 추가 *!*/
+
 }
 
 
@@ -142,7 +142,7 @@
 /* 📌 모달 창 */
 .modal {
     background: #e8e6e6;
-    width: 150px;
+    width: 200px;
     padding: 2px;
     border-radius: 10px;
     text-align: center;
@@ -153,7 +153,8 @@
 .modal-text {
     font-size: 10px;
     color: #323a46;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    margin-top: 30px;
 }
 
 /* 🟨 모달 버튼 컨테이너 (버튼을 나란히 배치) */
@@ -165,7 +166,7 @@
 /* 🟩 모달 버튼 (반반 나누기) */
 .modal-btn {
     flex: 1;
-    padding: 12px 0;
+    padding: 15px 5px;
     font-size: 10px;
     font-weight: bold;
     border: none;
@@ -178,11 +179,13 @@
 /* 확인 버튼 */
 .modal-btn.confirm:hover{
     background: #fbc556;
+    border-bottom-left-radius: 10px;
 }
 
 /*취소 버튼 */
 .modal-btn.cancel:hover{
     background: #ddd;
+    border-bottom-right-radius: 10px;
 }
 
 
