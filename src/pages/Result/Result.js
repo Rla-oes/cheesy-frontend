@@ -38,14 +38,14 @@ const Result = () => {
                 <div className="overlap-group">
                     <div className="text-wrapper-4">{menu}</div>
                 </div>
-                <div className="div-wrapper" onClick={() => navigate("./Roulette") }>
+                <div className="div-wrapper" onClick={() => navigate("/Roulette") }>
                     <div className="text-wrapper-3">restart</div>
                 </div>
                 <div className="frame" onClick={saveMenu}>
                     <div className="text-wrapper-2">save</div>
                 </div>
-                <IconamoonHome className="iconamoon-home" onClick={() => navigate("./Home")} />
-                <MaterialSymbolsMenuBook className="material-symbols" onClick={() => navigate("./Mymenu")} />
+                <IconamoonHome className="iconamoon-home" onClick={() => navigate("/Home")} />
+                <MaterialSymbolsMenuBook className="material-symbols" onClick={() => navigate("/Mymenu")} />
                 <img className="img" alt="Frame" src={frame14} />
             </div>
         </div>
