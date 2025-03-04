@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
+import axios from "axios"; // axios 추가
 import pen from "./pen.svg";
 import profile from "./profile.svg";
 import trash from "./trash.svg";
@@ -7,30 +8,58 @@ import {Link, useLocation, useNavigate} from "react-router-dom";
 import Header from "../../component/Header";
 
 export const Mymenu = () => {
-    const [menuItems, setMenuItems] = useState(["불고기", "김치찌개", "제육볶음"]);
+    const [menuItems, setMenuItems] = useState([]); // ✅ API에서 가져온 메뉴 저장
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [deleteIndex, setDeleteIndex] = useState(null);
+    const [deleteId, setDeleteId] = useState(null);
 
-    const handleDeleteClick = (index) => {
-        setDeleteIndex(index);
+    const anonymous_id = localStorage.getItem("anonymous_id"); // ✅ 로컬스토리지에서 익명 ID 가져오기
+
+    // 🛑 저장된 메뉴 불러오기 (백엔드 API 호출)
+    useEffect(() => {
+        if (!anonymous_id) return;
+
+        axios.get(`/api/saved-menus?anonymous_id=${anonymous_id}`)
+            .then(response => {
+                setMenuItems(response.data); // ✅ 불러온 데이터로 상태 업데이트
+            })
+            .catch(error => {
+                console.error("저장된 메뉴 불러오기 실패:", error);
+            });
+    }, [anonymous_id]);
+
+    // 삭제 버튼 클릭 시
+    const handleDeleteClick = (id) => {
+        setDeleteId(id);
         setIsModalOpen(true);
     };
 
+    // 없어도 되는 코드인거같은데 일단 냅둠
     const navigate = useNavigate();
     const location = useLocation();
     const category = location.state?.category;
 
-    // 삭제 확인 시 실행
+    // 삭제 확인 시 실행( 백엔드 api 호출)
     const handleConfirmDelete = () => {
-        setMenuItems(menuItems.filter((_, i) => i !== deleteIndex));
-        setIsModalOpen(false);
-        setDeleteIndex(null);
+        if (!deleteId) return;
+
+        axios.delete(`/api/saved-menus/${deleteId}`, {
+            data: { anonymous_id }, // ✅ 백엔드에서 ID 검증을 위해 body에 포함
+        })
+            .then(() => {
+                setMenuItems(menuItems.filter((item) => item.id !== deleteId)); // ✅ UI에서 삭제
+                setIsModalOpen(false);
+                setDeleteId(null);
+            })
+            .catch(error => {
+                console.error("메뉴 삭제 실패:", error);
+            });
     };
+
 
     // 모달 닫기 (취소)
     const handleCancelDelete = () => {
         setIsModalOpen(false);
-        setDeleteIndex(null);
+        setDeleteId(null);
     };
     const containerStyle = {
         width: "100%",
