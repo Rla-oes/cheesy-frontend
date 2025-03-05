@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { ReactComponent as IconamoonHome } from "../Roulette/img/iconamoon_home.svg";
-import { ReactComponent as MaterialSymbolsArrowBackRounded } from "../Roulette/img/material-symbols_arrow-back-rounded.svg";
 import frame5 from "../Roulette/img/Frame 5.png";
 import polygon2 from "../Roulette/img/Polygon 2.svg";
 import "./Roulette.css";
@@ -61,7 +59,7 @@ const Roulette = () => {
       <Header title="" />
       <div className="div">
         <div className="frame" onClick={startRoulette}>
-          <div className="overlap-group">
+          <div className="group">
             <div className="rectangle" />
             <div className="START">START</div>
           </div>

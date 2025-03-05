@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { ReactComponent as IconamoonHome } from "./iconamoon_home.svg";
 import { ReactComponent as MaterialSymbolsMenuBook } from "./material-symbols_menu-book.svg";
-import frame14 from "./Frame 14.png";
+// import frame14 from "./Frame 14.png";
 import "./Result.css";
 
 const Result = () => {
@@ -42,6 +42,7 @@ const Result = () => {
       .then(() => {
         alert("저장 완료!");
         setIsSaving(false);
+        navigate("/Mymenu");  // 저장 완료 후 이동
       })
       .catch((error) => {
         console.error("메뉴 저장 실패:", error);
@@ -50,34 +51,28 @@ const Result = () => {
   };
 
   return (
-    <div className="screen">
-      <div className="div">
-        <div className="text-wrapper">happy meal time!</div>
-        <div className="overlap-group">
-          <div className="text-wrapper-4">{menu}</div>
-        </div>
-        <div className="div-wrapper" onClick={() => navigate("/Roulette")}>
-          <div className="text-wrapper-3">restart</div>
-        </div>
-        <div
-          className={`frame ${isSaving ? "disabled" : ""}`}
-          onClick={saveMenu}
-        >
-          <div className="text-wrapper-2">
-            {isSaving ? "Saving..." : "Save"}
+      <div className="screen">
+        <div className="div">
+          <div className="text-wrapper">happy meal time!</div>
+          {/* overlap-group과 text-wrapper-4를 묶은 새로운 컨테이너 */}
+          <div className="overlap-container">
+            <div className="overlap-group">
+              <div className="text-wrapper-4">{menu}</div>
+            </div>
           </div>
+          {/*새로운 컨테이너2*/}
+          <div className="action-container">
+            <div className="div-wrapper" onClick={() => navigate("/Category") }>
+              <div className="text-wrapper-3">restart</div>
+            </div>
+            <div className="button" onClick={saveMenu}>
+              <div className="text-wrapper-2">save</div>
+            </div>
+          </div>
+          <IconamoonHome className="iconamoon-home" onClick={() => navigate("/")} />
+          <MaterialSymbolsMenuBook className="material-symbols" onClick={() => navigate("/Mymenu")} />
         </div>
-        <IconamoonHome
-          className="iconamoon-home"
-          onClick={() => navigate("/Home")}
-        />
-        <MaterialSymbolsMenuBook
-          className="material-symbols"
-          onClick={() => navigate("/Mymenu")}
-        />
-        <img className="img" alt="Frame" src={frame14} />
       </div>
-    </div>
   );
 };
 
