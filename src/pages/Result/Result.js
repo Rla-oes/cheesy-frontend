@@ -44,7 +44,7 @@ const Result = () => {
                 <div className="frame" onClick={saveMenu}>
                     <div className="text-wrapper-2">save</div>
                 </div>
-                <IconamoonHome className="iconamoon-home" onClick={() => navigate("/Home")} />
+                <IconamoonHome className="iconamoon-home" onClick={() => navigate("/")} />
                 <MaterialSymbolsMenuBook className="material-symbols" onClick={() => navigate("/Mymenu")} />
                 <img className="img" alt="Frame" src={frame14} />
             </div>

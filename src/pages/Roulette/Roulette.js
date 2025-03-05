@@ -31,8 +31,8 @@ const Roulette = () => {
         setSpinning(true);
         setTimeout(() => {
             setSpinning(false);
-            navigate("/result", { state: { category } });
-        }, 1000);
+            navigate("/Result", { state: { category } });
+        }, 2000);
     };
 
     return (
@@ -52,11 +52,13 @@ const Roulette = () => {
                         alt="Frame"
                         src={frame5}
                         animate={{ rotate: spinning ? 1080 : 0 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
+                        transition={{ duration: 2, ease: "easeOut" }}
                     />
                     <img className="polygon" alt="Polygon" src={polygon2} />
                 </div>
 
+                <IconamoonHome className="iconamoon-home" onClick={() => navigate("/home")} />
+                <MaterialSymbolsArrowBackRounded className="material-symbols" onClick={() => navigate(-1)} />
             </div>
         </div>
     );
