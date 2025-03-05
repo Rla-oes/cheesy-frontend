@@ -15,15 +15,23 @@ const Roulette = () => {
     const category = location.state?.category;
     const [spinning, setSpinning] = useState(false);
     const [anonymousId, setAnonymousId] = useState(localStorage.getItem("anonymous_id"));
+    const [menu, setMenu] = useState(null);
 
     useEffect(() => {
         if (!anonymousId) {
-            axios.post("/api/anonymous-id")
+            axios.post("/api/users/anonymous-id")
                 .then(response => {
                     setAnonymousId(response.data.anonymous_id);
                     localStorage.setItem("anonymous_id", response.data.anonymous_id);
                 })
                 .catch(error => console.error("익명 ID 생성 실패:", error));
+        }
+        if (category) {
+            axios.get(`/api/menus/random/${category}`)
+                .then(response => {
+                    setMenu(response.data);
+                })
+                .catch(error => console.error("랜덤 메뉴 불러오기 실패:", error));
         }
     }, [anonymousId]);
 
