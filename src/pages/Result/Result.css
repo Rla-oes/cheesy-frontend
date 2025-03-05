@@ -35,13 +35,13 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: 10vw;
+    height: 50px;
     justify-content: center;
     left: 237px;
     padding: 27px 27px;
     position: absolute;
     top: 448px;
-    width: 10vw;
+    width: 50px;
 }
 
 .screen .text-wrapper-2 {
@@ -65,13 +65,13 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: 10vw;
+    height: 50px;
     justify-content: center;
     left: 56px;
     padding: 27px 27px;
     position: absolute;
     top: 448px;
-    width: 10vw;
+    width: 50px;
 }
 
 .screen .text-wrapper-3 {

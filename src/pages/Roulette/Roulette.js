@@ -1,29 +1,34 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios";
-import { ReactComponent as IconamoonHome } from "../Roulette/img/iconamoon_home.svg";
-import { ReactComponent as MaterialSymbolsArrowBackRounded } from "../Roulette/img/material-symbols_arrow-back-rounded.svg";
-import frame5 from "../Roulette/img/Frame 5.png";
-import polygon2 from "../Roulette/img/Polygon 2.svg";
+import { ReactComponent as IconamoonHome } from ".//img/iconamoon_home.svg";
+import { ReactComponent as MaterialSymbolsArrowBackRounded } from ".//img/material-symbols_arrow-back-rounded.svg";
+import frame5 from ".//img/Frame 5.png";
+import polygon2 from ".//img/Polygon 2.svg";
 import "./Roulette.css";
-import Header from "../../component/Header";
 
 const Roulette = () => {
     const navigate = useNavigate();
-    const location = useLocation();
-    const category = location.state?.category;
     const [spinning, setSpinning] = useState(false);
     const [anonymousId, setAnonymousId] = useState(localStorage.getItem("anonymous_id"));
+    const [menu, setMenu] = useState(null);
 
     useEffect(() => {
         if (!anonymousId) {
-            axios.post("/api/anonymous-id")
+            axios.post("/api/users/anonymous-id")
                 .then(response => {
                     setAnonymousId(response.data.anonymous_id);
                     localStorage.setItem("anonymous_id", response.data.anonymous_id);
                 })
                 .catch(error => console.error("익명 ID 생성 실패:", error));
+        }
+        if (category) {
+            axios.get(`/api/menus/random/${category}`)
+                .then(response => {
+                    setMenu(response.data);
+                })
+                .catch(error => console.error("랜덤 메뉴 불러오기 실패:", error));
         }
     }, [anonymousId]);
 
@@ -31,13 +36,12 @@ const Roulette = () => {
         setSpinning(true);
         setTimeout(() => {
             setSpinning(false);
-            navigate("/Result", { state: { category } });
-        }, 2000);
+            navigate("./Result");
+        }, 3000);
     };
 
     return (
         <div className="screen">
-            <Header title="" />
             <div className="div">
                 <div className="frame" onClick={startRoulette}>
                     <div className="overlap-group">
@@ -52,7 +56,7 @@ const Roulette = () => {
                         alt="Frame"
                         src={frame5}
                         animate={{ rotate: spinning ? 1080 : 0 }}
-                        transition={{ duration: 2, ease: "easeOut" }}
+                        transition={{ duration: 1, ease: "easeOut" }}
                     />
                     <img className="polygon" alt="Polygon" src={polygon2} />
                 </div>
