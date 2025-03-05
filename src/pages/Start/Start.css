@@ -1,0 +1,12 @@
+.start-logo-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.title-text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+

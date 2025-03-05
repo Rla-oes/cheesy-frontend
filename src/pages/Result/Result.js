@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { ReactComponent as IconamoonHome } from "./iconamoon_home.svg";
 import { ReactComponent as MaterialSymbolsMenuBook } from "./material-symbols_menu-book.svg";
-import frame14 from "./Frame 14.png";
 import "./Result.css";
 
 const Result = () => {
@@ -44,10 +43,9 @@ const Result = () => {
                 <div className="frame" onClick={saveMenu}>
                     <div className="text-wrapper-2">save</div>
                 </div>
-                <IconamoonHome className="iconamoon-home" onClick={() => navigate("/Home")} />
+                <IconamoonHome className="iconamoon-home" onClick={() => navigate("/")} />
                 <MaterialSymbolsMenuBook className="material-symbols" onClick={() => navigate("/Mymenu")} />
-                <img className="img" alt="Frame" src={frame14} />
-            </div>
+            </div>s
         </div>
     );
 };
