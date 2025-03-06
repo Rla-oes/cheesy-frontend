@@ -59,10 +59,11 @@ const Roulette = () => {
             <Header title={category || "카테고리 선택 안됨"} />
             <div className="div">
                 <div className="frame" onClick={startRoulette}>
-                    <div className="group">
-                        <div className="rectangle" />
-                        <div className="START">START</div>
-                    </div>
+                    {/*<button className="group">*/}
+                        <button className="rectangle" >
+                            START
+                        </button>
+                    {/*</button>*/}
                 </div>
 
                 <div className="overlap">
