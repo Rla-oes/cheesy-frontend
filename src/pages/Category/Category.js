@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "../../component/Header";
 import "./category.css";
 
 function Category() {
+  const navigate = useNavigate();
   const categories = [
     "한식",
     "중식",
@@ -15,16 +16,25 @@ function Category() {
     "패스트푸드",
   ];
 
+  const anonymousId = localStorage.getItem("anonymous_id");
+  console.log("Retrieved anonymous_id:", anonymousId);
+
+  const handleCategoryClick = (category) => {
+    navigate("/roulette", { state: { category, anonymousId } });
+  };
+
   return (
     <div className="container">
       <Header title="카테고리" />
-
-      {/* 카테고리 버튼 → 클릭 시 해당 카테고리 페이지로 이동 */}
       <div className="button-container">
         {categories.map((category, index) => (
-          <Link to={`/category/${category}`} key={index} className="button">
+          <button
+            key={index}
+            className="button"
+            onClick={() => handleCategoryClick(category)}
+          >
             {category}
-          </Link>
+          </button>
         ))}
       </div>
     </div>

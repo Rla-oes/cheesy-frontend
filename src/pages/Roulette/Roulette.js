@@ -39,7 +39,7 @@ const Roulette = () => {
         <div className="screen">
             <Header title="" />
             <div className="div">
-                <div className="Frame" onClick={startRoulette}>
+                <div className="frame" onClick={startRoulette}>
                     <div className="overlap-group">
                         <div className="rectangle" />
                         <div className="START">START</div>

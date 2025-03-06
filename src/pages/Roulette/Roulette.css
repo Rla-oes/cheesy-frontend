@@ -21,7 +21,7 @@
     width: 189px;
 }
 
-.screen .overlap-group {
+.screen .group {
     height: 59px;
     position: relative;
 }
@@ -50,6 +50,7 @@
     text-align: center;
     top: 15px;
     width: 189px;
+    cursor: pointer;
 }
 
 .screen .overlap {

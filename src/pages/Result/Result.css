@@ -15,7 +15,7 @@
 
 .screen .text-wrapper {
     color: #323a46;
-    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-family: "Inter-Regular", sans-serif;
     font-size: 24px;
     font-weight: 400;
     left: 101px;
@@ -46,7 +46,7 @@
 
 .screen .text-wrapper-2 {
     color: #ffffff;
-    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-family: "Inter-Regular", sans-serif;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 0;
@@ -76,7 +76,7 @@
 
 .screen .text-wrapper-3 {
     color: #323a46;
-    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-family: "Inter-Regular", sans-serif;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 0;
@@ -94,7 +94,7 @@
     border: 1.5px solid;
     border-color: #fbd46d;
     border-radius: 30px;
-    height: 130px;
+    height: 118px;
     left: 50px;
     position: absolute;
     text-align: center;
@@ -104,7 +104,7 @@
 
 .screen .text-wrapper-4 {
     color: #333b46;
-    font-family: "Inter-Regular", Helvetica, sans-serif;
+    font-family: "Inter-Regular", sans-serif;
     font-size: 22px;
     font-weight: 400;
     height: 24px;
