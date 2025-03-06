@@ -27,7 +27,7 @@
   grid-template-columns: repeat(2, 1fr); /* ✅ 2열 유지 */
   grid-template-rows: repeat(4, 1fr); /* ✅ 4행 유지 */
   gap: 20px; /* ✅ 버튼 사이 간격을 기존보다 살짝 증가 */
-  margin-top: 60px;
+  margin-top: 120px;
   background: #FAE7B5;
   padding: 35px 25px; /* ✅ 패딩을 늘려 버튼과 배경이 더 부드럽게 감싸지도록 조정 */
   border-radius: 30px; /* ✅ 둥근 테두리 유지 */
