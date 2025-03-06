@@ -11,7 +11,7 @@ export const Start = () => {
                 <div className="home-container">
 
                     <div className="start-logo-container">
-                        <img src="../../../public/images/logo.svg" />
+                        <img src="/images/logo.svg" alt="Logo" />
                     </div>
 
                     <div className="title-text-wrapper">formymeal_</div>

@@ -15,7 +15,7 @@ function Header({ title }) {
       <span className="header-title">{title}</span>
 
       {/* 홈으로 가기 버튼 */}
-      <button className="icon-button" onClick={() => navigate("/")}> 
+      <button className="icon-button" onClick={() => navigate("/Home")}>
         <img src="/images/iconamoon_home.svg" alt="홈으로 가기" />
       </button>
     </div>

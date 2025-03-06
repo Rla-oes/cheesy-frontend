@@ -40,10 +40,10 @@ const Roulette = () => {
             <Header title="" />
             <div className="div">
                 <div className="frame" onClick={startRoulette}>
-                    <div className="overlap-group">
+                    {/*<div className="overlap-group">*/}
                         <div className="rectangle" />
                         <div className="START">START</div>
-                    </div>
+                    {/*</div>*/}
                 </div>
 
                 <div className="overlap">
