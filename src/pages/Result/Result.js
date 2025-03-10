@@ -60,20 +60,24 @@ const Result = () => {
                         <div className="text-wrapper-4">{menu}</div>
                     </div>
                 </div>
-                {/*새로운 컨테이너2*/}
+                {/* 새로운 컨테이너2 */}
                 <div className="action-container">
-                    <div className="div-wrapper" onClick={() => navigate("/Roulette") }>
-                        <div className="text-wrapper-3">restart</div>
-                    </div>
-                    <div className="button" onClick={saveMenu}>
-                        <div className="text-wrapper-2">save</div>
-                    </div>
+                    {/* restart 버튼 */}
+                    <button className="restart-button" onClick={() => navigate("/Roulette")}>
+                        restart
+                    </button>
+
+                    {/* save 버튼 */}
+                    <button className="save-button" onClick={saveMenu}>
+                        save
+                    </button>
                 </div>
                 <IconamoonHome className="iconamoon-home" onClick={() => navigate("/Home")} />
                 <MaterialSymbolsMenuBook className="material-symbols" onClick={() => navigate("/Mymenu")} />
             </div>
         </div>
     );
+
 };
 
 export default Result;
