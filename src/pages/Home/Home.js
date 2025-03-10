@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Home.css";
 import Header from "../../component/Header";
 
-const BASE_URL = process.env.REACT_APP_API_USER || "http://localhost:3000";
+const BASE_URL = process.env.REACT_APP_API_USER || "http://localhost:8080";
 
 function Home() {
   const navigate = useNavigate();

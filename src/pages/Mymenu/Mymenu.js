@@ -7,7 +7,7 @@ import "./Mymenu.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "../../component/Header";
 
-const BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
+const BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
 
 export const Mymenu = () => {
   const [menuItems, setMenuItems] = useState([]); // ✅ API에서 가져온 메뉴 저장
