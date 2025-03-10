@@ -7,6 +7,8 @@ import "./Mymenu.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "../../component/Header";
 
+const BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
+
 export const Mymenu = () => {
   const [menuItems, setMenuItems] = useState([]); // ✅ API에서 가져온 메뉴 저장
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,15 +22,15 @@ export const Mymenu = () => {
     if (!anonymous_id) return;
 
     axios
-        .get(`/api/saved-menus?anonymous_id=${anonymous_id}`)
-        .then((response) => {
-          console.log("API response data:", response.data);
-          const data = Array.isArray(response.data) ? response.data : []; // 데이터가 배열이 아니면 빈 배열로
-          setMenuItems(data);
-        })
-        .catch((error) => {
-          console.error("저장된 메뉴 불러오기 실패:", error);
-        });
+      .get(`${BASE_URL}/api/saved-menus?anonymous_id=${anonymous_id}`)
+      .then((response) => {
+        console.log("API response data:", response.data);
+        const data = Array.isArray(response.data) ? response.data : []; // 데이터가 배열이 아니면 빈 배열로
+        setMenuItems(data);
+      })
+      .catch((error) => {
+        console.error("저장된 메뉴 불러오기 실패:", error);
+      });
   }, [anonymous_id]);
 
   // 삭제 버튼 클릭 시
@@ -47,17 +49,17 @@ export const Mymenu = () => {
     if (!deleteId) return;
 
     axios
-        .delete(`/api/saved-menus/${deleteId}`, {
-          data: { anonymous_id }, // ✅ 백엔드에서 ID 검증을 위해 body에 포함
-        })
-        .then(() => {
-          setMenuItems(menuItems.filter((item) => item.id !== deleteId)); // ✅ UI에서 삭제
-          setIsModalOpen(false);
-          setDeleteId(null);
-        })
-        .catch((error) => {
-          console.error("메뉴 삭제 실패:", error);
-        });
+      .delete(`${BASE_URL}/api/saved-menus/${deleteId}`, {
+        data: { anonymous_id }, // ✅ 백엔드에서 ID 검증을 위해 body에 포함
+      })
+      .then(() => {
+        setMenuItems(menuItems.filter((item) => item.id !== deleteId)); // ✅ UI에서 삭제
+        setIsModalOpen(false);
+        setDeleteId(null);
+      })
+      .catch((error) => {
+        console.error("메뉴 삭제 실패:", error);
+      });
   };
 
   // 모달 닫기 (취소)
@@ -74,60 +76,61 @@ export const Mymenu = () => {
   };
 
   return (
-      <div className="screen">
-        <Header title="" />
-        <div className="div">
-          <div className="profile-container">
-            <img className="profile" alt="Profile" src={profile} />
-          </div>
+    <div className="screen">
+      <Header title="" />
+      <div className="div">
+        <div className="profile-container">
+          <img className="profile" alt="Profile" src={profile} />
+        </div>
 
-          <div className="menu-title">My Menu</div>
+        <div className="menu-title">My Menu</div>
 
-          <div className="Overlap-group">
-            <div className="Frame">
-              <div className="Rectangle">
-                <div className="menu-list">
-                  {menuItems.length === 0 ? (
-                      <div className="empty-message">저장된 메뉴가 없습니다</div> // 저장된 메뉴가 없을 때 표시
-                  ) : (
-                      menuItems.map((item) => (
-                          <div className="menu-Item" key={item.id}>
-                            <div className="menu-text">{item.Menu.name}</div> {/* 여기 수정! */}
-                            <button
-                                className="trash-btn"
-                                onClick={() => handleDeleteClick(item.id)}
-                            >
-                              <img className="trash" alt="Trash" src={trash} />
-                            </button>
-                          </div>
-                      ))
-                  )}
-                </div>
+        <div className="Overlap-group">
+          <div className="Frame">
+            <div className="Rectangle">
+              <div className="menu-list">
+                {menuItems.length === 0 ? (
+                  <div className="empty-message">저장된 메뉴가 없습니다</div> // 저장된 메뉴가 없을 때 표시
+                ) : (
+                  menuItems.map((item) => (
+                    <div className="menu-Item" key={item.id}>
+                      <div className="menu-text">{item.Menu.name}</div>{" "}
+                      {/* 여기 수정! */}
+                      <button
+                        className="trash-btn"
+                        onClick={() => handleDeleteClick(item.id)}
+                      >
+                        <img className="trash" alt="Trash" src={trash} />
+                      </button>
+                    </div>
+                  ))
+                )}
               </div>
             </div>
           </div>
         </div>
-
-        {/* 🛑 커스텀 삭제 모달 */}
-        {isModalOpen && (
-            <div className="modal-overlay">
-              <div className="modal">
-                <p className="modal-text">정말 삭제하시겠습니까?</p>
-                <div className="modal-buttons">
-                  <button
-                      className="modal-btn confirm"
-                      onClick={handleConfirmDelete}
-                  >
-                    확인
-                  </button>
-                  <button className="modal-btn cancel" onClick={handleCancelDelete}>
-                    취소
-                  </button>
-                </div>
-              </div>
-            </div>
-        )}
       </div>
+
+      {/* 🛑 커스텀 삭제 모달 */}
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <p className="modal-text">정말 삭제하시겠습니까?</p>
+            <div className="modal-buttons">
+              <button
+                className="modal-btn confirm"
+                onClick={handleConfirmDelete}
+              >
+                확인
+              </button>
+              <button className="modal-btn cancel" onClick={handleCancelDelete}>
+                취소
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 

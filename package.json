@@ -1,4 +1,5 @@
 {
+  "proxy": "https://https://port-0-cheesy-backend-m82xd98hcfdf2a62.sel4.cloudtype.app/",
   "name": "hello-react",
   "version": "0.1.0",
   "private": true,

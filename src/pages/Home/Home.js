@@ -4,12 +4,14 @@ import axios from "axios";
 import "./Home.css";
 import Header from "../../component/Header";
 
+const BASE_URL = process.env.REACT_APP_API_USER || "http://localhost:3000";
+
 function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
     axios
-      .get("/api/generate-anonymous-id")
+      .get(`${BASE_URL}/api/generate-anonymous-id`)
       .then((response) => {
         console.log("응답 데이터:", response.data);
         const anonymousId = response.data.anonymous_id;

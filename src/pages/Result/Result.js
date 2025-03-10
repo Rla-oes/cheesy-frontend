@@ -6,6 +6,8 @@ import { ReactComponent as MaterialSymbolsMenuBook } from "./material-symbols_me
 // import frame14 from "./Frame 14.png";
 import "./Result.css";
 
+const BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:3000";
+
 const Result = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -20,7 +22,7 @@ const Result = () => {
   useEffect(() => {
     if (!anonymousId) {
       axios
-        .post("/api/users/anonymous-id")
+        .post(`${BASE_URL}/api/users/anonymous-id`)
         .then((response) => {
           setAnonymousId(response.data.id);
           localStorage.setItem("anonymous_id", response.data.id);
@@ -35,7 +37,7 @@ const Result = () => {
 
     setIsSaving(true);
     axios
-      .post("/api/saved-menus", {
+      .post(`${BASE_URL}/api/saved-menus`, {
         anonymous_id: anonymousId,
         menu_id: location.state?.menu?.id,
       })
