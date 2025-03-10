@@ -23,9 +23,10 @@
     border: none;
     cursor: pointer;
     box-shadow: 0px 3px 3px #00000040;
-
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s; /* 애니메이션 추가 */
 }
 
+/* 카테고리 버튼 스타일 */
 .category-go-button {
     width: 200px;
     height: 100px;
@@ -33,6 +34,7 @@
     color: #323a46;
 }
 
+/* 마이 메뉴 버튼 스타일 */
 .mymenu-go-button {
     width: 200px;
     height: 70px;
@@ -40,18 +42,27 @@
     color: white;
 }
 
+/* hover 및 active 상태 */
 .category-go-button:hover {
-    background-color: #e3b455; /* hover 상태에서 조금 더 어두운 색 */
+    background-color: #e3b455; /* hover 상태에서 더 어두운 색 */
+    transform: scale(1.05); /* hover 시 크기 살짝 확대 */
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2); /* hover 시 그림자 강조 */
 }
 
 .category-go-button:active {
-    background-color: #d2a249; /* 눌렸을 때 더 어두운 색 */
+    background-color: #d2a249; /* active 상태에서 더 어두운 색 */
+    transform: scale(0.95); /* active 상태에서 살짝 축소 */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1); /* active 시 그림자 축소 */
 }
 
 .mymenu-go-button:hover {
-    background-color: #406d6d; /* hover 상태에서 조금 더 어두운 색 */
+    background-color: #406d6d; /* hover 상태에서 더 어두운 색 */
+    transform: scale(1.05); /* hover 시 크기 살짝 확대 */
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.2); /* hover 시 그림자 강조 */
 }
 
 .mymenu-go-button:active {
-    background-color: #365f5f; /* 눌렸을 때 더 어두운 색 */
+    background-color: #365f5f; /* active 상태에서 더 어두운 색 */
+    transform: scale(0.95); /* active 상태에서 살짝 축소 */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1); /* active 시 그림자 축소 */
 }
