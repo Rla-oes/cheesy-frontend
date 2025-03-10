@@ -10,6 +10,7 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // 익명 사용자 ID 생성
     axios
       .get(`${BASE_URL}/api/generate-anonymous-id`, { withCredentials: true })
       .then((response) => {
@@ -20,12 +21,27 @@ function Home() {
           localStorage.setItem("anonymous_id", anonymousId);
           console.log("익명 아이디 저장:", anonymousId);
         } else {
-          console.error(
-            "ID 생성에 실패했습니다. 응답 데이터가 올바르지 않습니다."
-          );
+          console.error("ID 생성 실패: 응답 데이터가 올바르지 않음");
         }
       })
       .catch((error) => console.error("ID 생성 실패:", error));
+
+    // 메뉴 import: localStorage에 플래그 없을 때만 실행
+    const isMenuImported = localStorage.getItem("menu_imported");
+
+    if (!isMenuImported) {
+      axios
+        .post(`${BASE_URL}/api/menus/import`)
+        .then((res) => {
+          console.log("CSV import 성공:", res.data);
+          localStorage.setItem("menu_imported", "true"); // 플래그 저장
+        })
+        .catch((err) => {
+          console.error("CSV import 실패:", err);
+        });
+    } else {
+      console.log("메뉴는 이미 import됨 (재요청 생략)");
+    }
   }, []);
 
   return (
