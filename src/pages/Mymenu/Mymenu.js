@@ -7,7 +7,7 @@ import "./Mymenu.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "../../component/Header";
 
-const BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 export const Mymenu = () => {
   const [menuItems, setMenuItems] = useState([]); // ✅ API에서 가져온 메뉴 저장
@@ -22,7 +22,9 @@ export const Mymenu = () => {
     if (!anonymous_id) return;
 
     axios
-      .get(`${BASE_URL}/api/saved-menus?anonymous_id=${anonymous_id}`)
+      .get(`${BASE_URL}/api/saved-menus?anonymous_id=${anonymous_id}`, {
+        withCredentials: true,
+      })
       .then((response) => {
         console.log("API response data:", response.data);
         const data = Array.isArray(response.data) ? response.data : []; // 데이터가 배열이 아니면 빈 배열로
@@ -49,9 +51,13 @@ export const Mymenu = () => {
     if (!deleteId) return;
 
     axios
-      .delete(`${BASE_URL}/api/saved-menus/${deleteId}`, {
-        data: { anonymous_id }, // ✅ 백엔드에서 ID 검증을 위해 body에 포함
-      })
+      .delete(
+        `${BASE_URL}/api/saved-menus/${deleteId}`,
+        {
+          data: { anonymous_id }, // ✅ 백엔드에서 ID 검증을 위해 body에 포함
+        },
+        { withCredentials: true }
+      )
       .then(() => {
         setMenuItems(menuItems.filter((item) => item.id !== deleteId)); // ✅ UI에서 삭제
         setIsModalOpen(false);

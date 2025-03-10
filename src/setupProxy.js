@@ -5,7 +5,7 @@ module.exports = function (app) {
     "/api",
     createProxyMiddleware({
       target:
-        "https://https://port-0-cheesy-backend-m82xd98hcfdf2a62.sel4.cloudtype.app/",
+        "https://port-0-cheesy-backend-m82xd98hcfdf2a62.sel4.cloudtype.app",
       changeOrigin: true,
       secure: false,
     })

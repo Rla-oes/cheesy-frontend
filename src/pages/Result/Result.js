@@ -6,7 +6,7 @@ import { ReactComponent as MaterialSymbolsMenuBook } from "./material-symbols_me
 // import frame14 from "./Frame 14.png";
 import "./Result.css";
 
-const BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const Result = () => {
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ const Result = () => {
   useEffect(() => {
     if (!anonymousId) {
       axios
-        .post(`${BASE_URL}/api/users/anonymous-id`)
+        .post(`${BASE_URL}/api/users/anonymous-id`, { withCredentials: true })
         .then((response) => {
           setAnonymousId(response.data.id);
           localStorage.setItem("anonymous_id", response.data.id);
@@ -37,10 +37,14 @@ const Result = () => {
 
     setIsSaving(true);
     axios
-      .post(`${BASE_URL}/api/saved-menus`, {
-        anonymous_id: anonymousId,
-        menu_id: location.state?.menu?.id,
-      })
+      .post(
+        `${BASE_URL}/api/saved-menus`,
+        {
+          anonymous_id: anonymousId,
+          menu_id: location.state?.menu?.id,
+        },
+        { withCredentials: true }
+      )
       .then(() => {
         alert("저장 완료!");
         setIsSaving(false);

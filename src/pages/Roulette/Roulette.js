@@ -7,7 +7,7 @@ import polygon2 from "../Roulette/img/Polygon 2.svg";
 import "./Roulette.css";
 import Header from "../../component/Header";
 
-const BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const Roulette = () => {
   const navigate = useNavigate();
