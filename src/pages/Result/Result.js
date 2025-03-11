@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import HeaderResultPage from "../../component/HeaderResultPage";
+import { ReactComponent as IconamoonHome } from "./iconamoon_home.svg";
+import { ReactComponent as MaterialSymbolsMenuBook } from "./material-symbols_menu-book.svg";
 import "./Result.css";
 
 const BASE_URL = process.env.REACT_APP_API_BASE_URL;
@@ -58,47 +59,48 @@ const Result = () => {
 
   return (
     <div className="screen">
-        <HeaderResultPage title="결과" />
-        <div className="div">
-            <div className="text-wrapper">happy meal time!</div>
+      <div className="div">
+        <div className="text-wrapper">happy meal time!</div>
 
-            <div className="overlap-container">
-                <div className="overlap-group">
-                    <div className="text-wrapper-4">{menu}</div>
-                </div>
-            </div>
-
-            <div className="action-container">
-                <button className="restart-button" onClick={() => navigate("/category")}>
-                    restart
-                </button>
-                <button className="save-button" onClick={saveMenu}>
-                    save
-                </button>
-            </div>
-
-            <img
-                src="/images/Frame%2014.png"
-                alt="결과 이미지"
-                className="bottom-image"
-            />
+        <div className="overlap-container">
+          <div className="overlap-group">
+            <div className="text-wrapper-4">{menu}</div>
+          </div>
         </div>
 
-        {/* ✅ 모달만 아래에 추가 */}
-        {isModalOpen && (
-            <div className="modal-overlay">
-                <div className="modal">
-                    <p className="modal-text">저장 완료!</p>
-                    <div className="modal-buttons">
-                        <button className="modal-btn confirm" onClick={handleConfirm}>
-                            확인
-                        </button>
-                    </div>
-                </div>
+        <div className="action-container">
+          <button
+            className="restart-button"
+            onClick={() => navigate("/category")}
+          >
+            restart
+          </button>
+          <button className="save-button" onClick={saveMenu}>
+            save
+          </button>
+        </div>
+
+        <img
+          src="/images/Frame%2014.png"
+          alt="결과 이미지"
+          className="bottom-image"
+        />
+      </div>
+
+      {/* ✅ 모달만 아래에 추가 */}
+      {isModalOpen && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <p className="modal-text">저장 완료!</p>
+            <div className="modal-buttons">
+              <button className="modal-btn confirm" onClick={handleConfirm}>
+                확인
+              </button>
             </div>
-        )}
+          </div>
+        </div>
+      )}
     </div>
-);
-
-
+  );
+};
 export default Result;
