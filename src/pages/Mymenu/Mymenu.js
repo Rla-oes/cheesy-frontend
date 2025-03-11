@@ -83,7 +83,7 @@ export const Mymenu = () => {
 
   return (
     <div className="screen">
-      <Header title="" />
+      <Header title="마이 메뉴" />
       <div className="div">
         <div className="profile-container">
           <img className="profile" alt="Profile" src={profile} />

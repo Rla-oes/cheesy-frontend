@@ -48,7 +48,7 @@ function Home() {
 
   return (
     <div className="screen">
-      <Header title="Home" />
+      <Header title="홈" />
       <div className="div">
         <div className="home-container">
           <div className="category-wrapper">

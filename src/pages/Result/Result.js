@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
-import { ReactComponent as IconamoonHome } from "./iconamoon_home.svg";
-import { ReactComponent as MaterialSymbolsMenuBook } from "./material-symbols_menu-book.svg";
+import HeaderResultPage from "../../component/HeaderResultPage";
 import "./Result.css";
 
 const BASE_URL = process.env.REACT_APP_API_BASE_URL;
@@ -59,6 +58,7 @@ const Result = () => {
 
   return (
     <div className="screen">
+      <HeaderResultPage title="결과" />
       <div className="div">
         <div className="text-wrapper">happy meal time!</div>
 

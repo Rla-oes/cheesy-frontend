@@ -173,7 +173,6 @@
     left: 0;
 }
 
-/* ✅ 모달 오버레이 */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -187,7 +186,6 @@
     z-index: 1000;
 }
 
-/* ✅ 모달 박스 */
 .modal {
     background: #e8e6e6;
     width: 200px;
@@ -197,7 +195,6 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ✅ 모달 텍스트 */
 .modal-text {
     font-size: 10px;
     color: #323a46;
@@ -206,13 +203,11 @@
     font-family: "Inter", Helvetica, sans-serif;
 }
 
-/* ✅ 모달 버튼 영역 */
 .modal-buttons {
     display: flex;
     width: 100%;
 }
 
-/* ✅ 모달 버튼 공통 스타일 */
 .modal-btn {
     flex: 1;
     padding: 15px 5px;
@@ -225,13 +220,11 @@
     font-family: "Inter", Helvetica, sans-serif;
 }
 
-/* ✅ 확인 버튼 hover */
 .modal-btn.confirm:hover {
     background: #fbc556;
     border-bottom-left-radius: 10px;
 }
 
-/* ✅ 취소 버튼 hover */
 .modal-btn.cancel:hover {
     background: #ddd;
     border-bottom-right-radius: 10px;
