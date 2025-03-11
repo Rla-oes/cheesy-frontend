@@ -31,7 +31,7 @@
     display: flex;
     gap: 80px; /* 버튼 사이 간격 */
     justify-content: center;
-    margin-top: 450px;
+    margin-top: 420px;
     position: relative;
 }
 
@@ -42,10 +42,10 @@
     box-shadow: 0 4px 4px #00000040;
     color: #323a46;
     font-family: "Inter", Helvetica, sans-serif;
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 400;
-    height: 100px;
-    width: 100px;
+    height: 95px;
+    width: 95px;
     text-align: center;
     display: flex;
     align-items: center;
@@ -58,7 +58,7 @@
 /* save 버튼은 색만 다르게 설정 */
 .screen .save-button {
     background-color: #4f8a8b;
-    color: #e3e0e0;
+    color: rgba(255, 255, 255, 0.91);
 }
 
 /* hover 상태 스타일 */
@@ -165,8 +165,15 @@
     width: 315px;
 }
 
+.bottom-image {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
 
-/* 🛑 모달 배경 (어두운 오버레이) */
+/* ✅ 모달 오버레이 */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -177,9 +184,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
-/* 📌 모달 창 */
+/* ✅ 모달 박스 */
 .modal {
     background: #e8e6e6;
     width: 200px;
@@ -189,41 +197,42 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* 📝 모달 텍스트 */
+/* ✅ 모달 텍스트 */
 .modal-text {
     font-size: 10px;
     color: #323a46;
     margin-bottom: 20px;
     margin-top: 30px;
+    font-family: "Inter", Helvetica, sans-serif;
 }
 
-/* 🟨 모달 버튼 컨테이너 (버튼을 나란히 배치) */
+/* ✅ 모달 버튼 영역 */
 .modal-buttons {
     display: flex;
     width: 100%;
 }
 
-/* 🟩 모달 버튼 (반반 나누기) */
+/* ✅ 모달 버튼 공통 스타일 */
 .modal-btn {
     flex: 1;
     padding: 15px 5px;
     font-size: 10px;
     font-weight: bold;
     border: none;
-
     background-color: transparent;
     cursor: pointer;
     transition: background 0.3s;
+    font-family: "Inter", Helvetica, sans-serif;
 }
 
-/* 확인 버튼 */
-.modal-btn.confirm:hover{
+/* ✅ 확인 버튼 hover */
+.modal-btn.confirm:hover {
     background: #fbc556;
     border-bottom-left-radius: 10px;
 }
 
-/*취소 버튼 */
-.modal-btn.cancel:hover{
+/* ✅ 취소 버튼 hover */
+.modal-btn.cancel:hover {
     background: #ddd;
     border-bottom-right-radius: 10px;
 }
