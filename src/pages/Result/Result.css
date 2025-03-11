@@ -165,7 +165,8 @@
     width: 315px;
 }
 
-/* ✅ 모달 오버레이 */
+
+/* 🛑 모달 배경 (어두운 오버레이) */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -176,10 +177,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
 }
 
-/* ✅ 모달 박스 */
+/* 📌 모달 창 */
 .modal {
     background: #e8e6e6;
     width: 200px;
@@ -189,42 +189,41 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* ✅ 모달 텍스트 */
+/* 📝 모달 텍스트 */
 .modal-text {
     font-size: 10px;
     color: #323a46;
     margin-bottom: 20px;
     margin-top: 30px;
-    font-family: "Inter", Helvetica, sans-serif;
 }
 
-/* ✅ 모달 버튼 영역 */
+/* 🟨 모달 버튼 컨테이너 (버튼을 나란히 배치) */
 .modal-buttons {
     display: flex;
     width: 100%;
 }
 
-/* ✅ 모달 버튼 공통 스타일 */
+/* 🟩 모달 버튼 (반반 나누기) */
 .modal-btn {
     flex: 1;
     padding: 15px 5px;
     font-size: 10px;
     font-weight: bold;
     border: none;
+
     background-color: transparent;
     cursor: pointer;
     transition: background 0.3s;
-    font-family: "Inter", Helvetica, sans-serif;
 }
 
-/* ✅ 확인 버튼 hover */
-.modal-btn.confirm:hover {
+/* 확인 버튼 */
+.modal-btn.confirm:hover{
     background: #fbc556;
     border-bottom-left-radius: 10px;
 }
 
-/* ✅ 취소 버튼 hover */
-.modal-btn.cancel:hover {
+/*취소 버튼 */
+.modal-btn.cancel:hover{
     background: #ddd;
     border-bottom-right-radius: 10px;
 }
