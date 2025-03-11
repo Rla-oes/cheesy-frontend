@@ -23,7 +23,7 @@
     border: none;
     cursor: pointer;
     box-shadow: 0px 3px 3px #00000040;
-    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s; /* 애니메이션 추가 */
+    transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease; /* 애니메이션 추가 */
 }
 
 /* 카테고리 버튼 스타일 */
@@ -53,6 +53,7 @@
     background-color: #d2a249; /* active 상태에서 더 어두운 색 */
     transform: scale(0.95); /* active 상태에서 살짝 축소 */
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1); /* active 시 그림자 축소 */
+    transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .mymenu-go-button:hover {
@@ -65,4 +66,5 @@
     background-color: #365f5f; /* active 상태에서 더 어두운 색 */
     transform: scale(0.95); /* active 상태에서 살짝 축소 */
     box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1); /* active 시 그림자 축소 */
+    transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
 }

@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;    /* 화면에 고정 */
-    top: 50px;             /* 화면 상단에 위치 */
+    top: 10px;             /* 화면 상단에 위치 */
     z-index: 1000;      /* 다른 요소들보다 위에 표시되도록 */
     /*background-color: white;  !* 배경색 지정 (투명한 경우 다른 요소들이 보일 수 있음) *!*/
 }

@@ -10,21 +10,23 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // 익명 사용자 ID 생성
-    axios
-      .get(`${BASE_URL}/api/generate-anonymous-id`, { withCredentials: true })
-      .then((response) => {
-        console.log("응답 데이터:", response.data);
-        const anonymousId = response.data.anonymous_id;
+    const existingId = localStorage.getItem("anonymous_id");
 
-        if (anonymousId) {
-          localStorage.setItem("anonymous_id", anonymousId);
-          console.log("익명 아이디 저장:", anonymousId);
-        } else {
-          console.error("ID 생성 실패: 응답 데이터가 올바르지 않음");
-        }
-      })
-      .catch((error) => console.error("ID 생성 실패:", error));
+    // 익명 사용자 ID가 없을 때만 요청
+    if (!existingId) {
+      axios
+        .get(`${BASE_URL}/api/generate-anonymous-id`, { withCredentials: true })
+        .then((response) => {
+          const anonymousId = response.data.anonymous_id;
+          if (anonymousId) {
+            localStorage.setItem("anonymous_id", anonymousId);
+            console.log("새 익명 ID 저장:", anonymousId);
+          }
+        })
+        .catch((error) => console.error("ID 생성 실패:", error));
+    } else {
+      console.log("이미 존재하는 익명 ID:", existingId);
+    }
 
     // 메뉴 import: localStorage에 플래그 없을 때만 실행
     const isMenuImported = localStorage.getItem("menu_imported");

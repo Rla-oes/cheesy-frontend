@@ -44,7 +44,7 @@
   justify-content: center;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15); /* 버튼에도 그림자 효과 유지 */
   cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s; /* 애니메이션 추가 */
+  transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease; /* 애니메이션 추가 */
 }
 
 /* hover 및 active 상태 */
@@ -58,4 +58,5 @@
   background-color: #e5b75f; /* active 상태에서 더 어두운 색 */
   transform: scale(0.95); /* active 상태에서 살짝 축소 */
   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1); /* active 시 그림자 축소 */
+  transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
 }
