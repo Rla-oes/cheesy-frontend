@@ -1,42 +1,107 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-.screen {
+/* 🖥 전체 화면 */
+.Screen {
+    background-color: #ffffff;
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    background-color: #ffffff;
+}
+
+/* ✅ 메인 텍스트 영역 */
+.result-title {
+    font-size: 22px;
+    font-weight: 400;
+    color: #333B46;
+    font-family: "Inter", Helvetica, sans-serif;
+    letter-spacing: 1.2px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+/* ✅ 메뉴 보여주는 박스 */
+.Frame {
+    width: 300px;
+    height: 450px;
+}
+
+.Rectangle {
+    background-color: #fbd46d1a;
+    border: 1.7px solid #fbd46d;
+    border-radius: 30px;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ✅ 메뉴 리스트 */
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     width: 100%;
 }
 
-.screen .div {
-    height: 852px;
-    position: relative;
-    width: 393px;
-}
-
-.screen .text-wrapper {
-    color: #333B46;
-    font-family: "Inter", Helvetica, sans-serif;
-    font-size: 22px;
-    font-weight: 400;
-    left: 101px;
-    letter-spacing: 1.20px;
-    line-height: 24px;
-    position: absolute;
-    text-align: center;
-    top: 225px;
-    white-space: nowrap;
-}
-
-.screen .action-container {
+.menu-Item {
     display: flex;
-    gap: 80px; /* 버튼 사이 간격 */
-    justify-content: center;
-    margin-top: 450px;
-    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fbd46d4c;
+    border-radius: 15px;
+    padding: 2px 13px;
+    margin-bottom: 2px;
+    width: 243px;
+    height: 40px;
 }
 
-/* 버튼 스타일 - restart */
-.screen .restart-button, .screen .save-button {
+.menu-text {
+    font-size: 13px;
+    font-family: "Inter", Helvetica, sans-serif;
+    font-weight: bold;
+    color: #333B46;
+    opacity: 0.6;
+}
+
+/* ✅ 비어있을 때 메시지 */
+.empty-message {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333B46;
+    opacity: 0.6;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fbd46d4c;
+    border-radius: 15px;
+}
+
+/* ✅ 버튼 컨테이너 */
+.action-container {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* ✅ 공통 버튼 스타일 */
+.save-button,
+.restart-button {
     background-color: #fbd46d;
     border-radius: 50%;
     box-shadow: 0 4px 4px #00000040;
@@ -46,121 +111,95 @@
     font-weight: 400;
     height: 100px;
     width: 100px;
-    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     border: none;
-    transition: transform 0.2s, background-color 0.2s; /* 애니메이션 */
+    transition: transform 0.2s, background-color 0.2s;
 }
 
-/* save 버튼은 색만 다르게 설정 */
-.screen .save-button {
+/* 저장 버튼 색상 구분 */
+.save-button {
     background-color: #4f8a8b;
     color: #e3e0e0;
 }
 
-/* hover 상태 스타일 */
-.screen .restart-button:hover, .screen .save-button:hover {
-    background-color: #cfa93b; /* hover 시 색상 변화 */
-    transform: scale(1.1); /* hover 시 크기 살짝 확대 */
+/* hover 효과 */
+.save-button:hover {
+    background-color: #2b5e5e;
+    transform: scale(1.1);
 }
 
-.screen .save-button:hover {
-    background-color: #2b5e5e; /* save 버튼 hover 시 색상 변화 */
+.restart-button:hover {
+    background-color: #cfa93b;
+    transform: scale(1.1);
 }
 
-/* active 상태 스타일 */
-.screen .restart-button:active, .screen .save-button:active {
-    transform: scale(0.95); /* active 시 크기 살짝 축소 */
-    box-shadow: 0 2px 2px #00000040; /* active 시 그림자 축소 */
+/* active 효과 */
+.save-button:active,
+.restart-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 2px #00000040;
 }
 
-.screen .overlap-container {
+/* ✅ 모달 오버레이 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
     display: flex;
-    justify-content: center; /* 가운데 정렬 */
-    align-items: center;     /* 세로 가운데 정렬 */
-    position: absolute;
-    top: 300px;
-    left: 50px;
-    width: 294px;
-    height: 60px;
+    justify-content: center;
+    align-items: center;
 }
 
-.screen .overlap-group {
-    display: flex;
-    justify-content: center; /* 텍스트를 가운데 정렬 */
-    align-items: center;     /* 세로 가운데 정렬 */
-    background-color: #fbd46d1a;
-    border: 1.5px solid;
-    border-color: #fbd46d;
-    border-radius: 30px;
-    height: 100%; /* 부모 컨테이너 크기에 맞게 설정 */
-    width: 100%;  /* 부모 컨테이너 크기에 맞게 설정 */
-    padding-top: 25px;
-    padding-bottom: 25px;
+/* ✅ 모달 박스 */
+.modal {
+    background: #e8e6e6;
+    width: 200px;
+    padding: 2px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.screen .text-wrapper-4 {
-    color: #333B46;
-    opacity: 0.9;
-    font-family: "Inter", Helvetica, sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0;
-    white-space: nowrap;
-}
-
-.screen .text-wrapper-2 {
-    color: #ffffff;
-    font-family: "Inter", Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: normal;
-    margin-top: -1.00px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
-}
-
-.screen .text-wrapper-3 {
+/* ✅ 모달 텍스트 */
+.modal-text {
+    font-size: 10px;
     color: #323a46;
-    font-family: "Inter", Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: normal;
-    margin-top: -1.00px;
-    position: relative;
-    white-space: nowrap;
-    width: fit-content;
+    margin-bottom: 20px;
+    margin-top: 30px;
 }
 
-.screen .iconamoon-home {
-    height: 30px;
-    left: 342px;
-    position: absolute;
-    top: 59px;
-    width: 30px;
+/* ✅ 모달 버튼 영역 */
+.modal-buttons {
+    display: flex;
+    width: 100%;
+}
+
+/* ✅ 모달 버튼 공통 */
+.modal-btn {
+    flex: 1;
+    padding: 15px 5px;
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
-.screen .material-symbols {
-    height: 35px;
-    left: 20px;
-    position: absolute;
-    top: 59px;
-    width: 35px;
-    cursor: pointer;
+/* 확인 버튼 hover */
+.modal-btn.confirm:hover {
+    background: #fbc556;
+    border-bottom-left-radius: 10px;
 }
 
-.screen .img {
-    height: 165px;
-    left: 39px;
-    position: absolute;
-    top: 687px;
-    width: 315px;
+/* 취소 버튼 hover */
+.modal-btn.cancel:hover {
+    background: #ddd;
+    border-bottom-right-radius: 10px;
 }
